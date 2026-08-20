@@ -9,6 +9,8 @@ const startExamBtn = document.getElementById('start-exam-btn');
 const studentNameInput = document.getElementById('student-name');
 const studentRollInput = document.getElementById('student-roll');
 const studentSectionInput = document.getElementById('student-section');
+const studentMobileInput = document.getElementById('student-mobile');
+const studentEmailInput = document.getElementById('student-email');
 const roleSelect = document.getElementById('role-select');
 const examTitle = document.getElementById('exam-title');
 const roleTag = document.getElementById('role-tag');
@@ -75,14 +77,16 @@ function handleStartExam() {
     const name = studentNameInput.value.trim();
     const roll = studentRollInput.value.trim();
     const section = studentSectionInput.value.trim();
+    const mobile = studentMobileInput.value.trim();
+    const email = studentEmailInput.value.trim();
     const roleKey = roleSelect.value;
     
-    if (!name || !roll || !section || !roleKey) {
+    if (!name || !roll || !section || !mobile || !email || !roleKey) {
         alert("Please fill in all details and select a role.");
         return;
     }
     
-    studentData = { name, roll, section };
+    studentData = { name, roll, section, mobile, email };
     const roleName = roleSelect.options[roleSelect.selectedIndex].text;
     startExam(roleKey, roleName);
 }
@@ -344,6 +348,8 @@ async function submitTest() {
                 name: studentData.name,
                 roll: studentData.roll,
                 section: studentData.section,
+                mobile: studentData.mobile,
+                email: studentData.email,
                 role: currentRoleName,
                 score: score,
                 percentage: percentage.toFixed(2)
@@ -443,6 +449,8 @@ function downloadReport() {
     reportContent += `Candidate Name : ${studentData.name}\n`;
     reportContent += `Roll No.       : ${studentData.roll}\n`;
     reportContent += `Section        : ${studentData.section}\n`;
+    reportContent += `Mobile         : ${studentData.mobile}\n`;
+    reportContent += `Email          : ${studentData.email}\n`;
     reportContent += `Role Applied   : ${currentRoleName}\n\n`;
     reportContent += `----------------------------------------------------------\n`;
     reportContent += `Score          : ${scoreText} out of ${questions.length}\n`;

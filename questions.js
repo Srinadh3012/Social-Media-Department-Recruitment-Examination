@@ -1,4 +1,4 @@
-// Base questions for each role
+// 50 unique questions for Graphic Design
 const gd_base = [
     {"q": "Which color mode is best used for digital screens?", "options": ["CMYK", "RGB", "Pantone", "Grayscale"], "a": 1},
     {"q": "What is the standard resolution for web images?", "options": ["300 dpi", "72 ppi", "150 ppi", "600 dpi"], "a": 1},
@@ -9,9 +9,50 @@ const gd_base = [
     {"q": "Which principle of design refers to the visual weight of elements?", "options": ["Contrast", "Balance", "Emphasis", "Rhythm"], "a": 1},
     {"q": "What is the rule of thirds used for?", "options": ["Color mixing", "Typography scaling", "Composition and framing", "File compression"], "a": 2},
     {"q": "Which tool in Photoshop is best for removing a solid background?", "options": ["Magic Wand", "Clone Stamp", "Brush Tool", "Blur Tool"], "a": 0},
-    {"q": "What is a 'hex code'?", "options": ["A password for Adobe CC", "A 6-digit code for colors in web design", "A grid system", "A typography rule"], "a": 1}
+    {"q": "What is a 'hex code'?", "options": ["A password for Adobe CC", "A 6-digit code for colors in web design", "A grid system", "A typography rule"], "a": 1},
+    {"q": "Which of these is a secondary color?", "options": ["Red", "Blue", "Green", "Yellow"], "a": 2},
+    {"q": "What does 'bleed' mean in print design?", "options": ["Ink smudging", "Printed area extending beyond the trim edge", "Color mixing error", "Text too close to the edge"], "a": 1},
+    {"q": "Which file type is best for a scalable logo?", "options": ["PNG", "JPEG", "SVG", "GIF"], "a": 2},
+    {"q": "What is 'leading' in typography?", "options": ["First letter of a paragraph", "Vertical space between lines of text", "Space between two specific letters", "The main headline"], "a": 1},
+    {"q": "What does 'CMYK' stand for?", "options": ["Cyan, Magenta, Yellow, Key (Black)", "Color, Mix, Yellow, Key", "Cyan, Maroon, Yellow, Key", "Color, Magenta, Yellow, Kilo"], "a": 0},
+    {"q": "Which tool is used to draw vector paths?", "options": ["Brush tool", "Pen tool", "Eraser tool", "Lasso tool"], "a": 1},
+    {"q": "What is the primary use of a grid system?", "options": ["Adding texture", "Creating structure and alignment", "Color selection", "Font styling"], "a": 1},
+    {"q": "What is negative space?", "options": ["Dark colors", "Mistakes in design", "Empty space around and between subjects", "Space outside the canvas"], "a": 2},
+    {"q": "Which principle creates a focal point?", "options": ["Rhythm", "Proportion", "Emphasis", "Pattern"], "a": 2},
+    {"q": "What is a serif font?", "options": ["A font with decorative strokes on letter ends", "A font with no decorative strokes", "A handwriting font", "A monospace font"], "a": 0},
+    {"q": "What is the shortcut for 'Undo' in most software?", "options": ["Ctrl + S", "Ctrl + Z", "Ctrl + C", "Ctrl + V"], "a": 1},
+    {"q": "Which design principle implies motion?", "options": ["Balance", "Alignment", "Rhythm", "Contrast"], "a": 2},
+    {"q": "What is a mockup?", "options": ["A rough sketch", "A final printed piece", "A realistic visual representation of a design", "A color palette"], "a": 2},
+    {"q": "Which format is best for high-quality print photos?", "options": ["TIFF", "GIF", "SVG", "PNG"], "a": 0},
+    {"q": "What does opacity control?", "options": ["Size", "Transparency", "Color hue", "Sharpness"], "a": 1},
+    {"q": "Which term describes colors opposite each other on the color wheel?", "options": ["Analogous", "Monochromatic", "Complementary", "Triadic"], "a": 2},
+    {"q": "What is the golden ratio approximately equal to?", "options": ["1.618", "3.14", "1.5", "2.0"], "a": 0},
+    {"q": "What is lorem ipsum used for?", "options": ["A magical spell", "Placeholder text for visual layout", "A specific font family", "A color gradient technique"], "a": 1},
+    {"q": "Which tool is best for cropping an image?", "options": ["Crop Tool", "Slice Tool", "Marquee Tool", "Move Tool"], "a": 0},
+    {"q": "What is raster graphics made of?", "options": ["Mathematical paths", "Pixels", "Text", "Lines"], "a": 1},
+    {"q": "What is an artboard?", "options": ["A physical drawing board", "A workspace within a document for designing", "A color palette window", "A layer mask"], "a": 1},
+    {"q": "Which term describes the lightness or darkness of a color?", "options": ["Hue", "Saturation", "Value", "Temperature"], "a": 2},
+    {"q": "What is typography?", "options": ["The study of typing speed", "The art and technique of arranging type", "A type of photography", "A color theory principle"], "a": 1},
+    {"q": "What does a clipping mask do?", "options": ["Deletes a layer", "Hides portions of a layer based on another layer's shape", "Changes color", "Locks a layer"], "a": 1},
+    {"q": "Which is an example of a sans-serif font?", "options": ["Times New Roman", "Helvetica", "Garamond", "Courier"], "a": 1},
+    {"q": "What is visual hierarchy?", "options": ["Arranging elements to show importance", "A folder structure", "A type of grid", "A color scheme"], "a": 0},
+    {"q": "What does 'DPI' mean?", "options": ["Digital Pixel Interface", "Dots Per Inch", "Design Print Integration", "Data Per Inch"], "a": 1},
+    {"q": "Which adjustment layer changes image colors drastically?", "options": ["Brightness/Contrast", "Hue/Saturation", "Levels", "Exposure"], "a": 1},
+    {"q": "What is tracking in typography?", "options": ["Finding lost fonts", "Adjusting space over a range of characters", "Aligning text", "Sizing text"], "a": 1},
+    {"q": "What is a mood board?", "options": ["A piece of wood", "A collection of visual elements for inspiration", "A type of meeting", "A finished poster"], "a": 1},
+    {"q": "Which color evokes urgency and passion?", "options": ["Blue", "Green", "Red", "Yellow"], "a": 2},
+    {"q": "What is whitespace?", "options": ["Only the color white", "Unmarked space in a design", "A blank document", "A bright light"], "a": 1},
+    {"q": "What does UX stand for?", "options": ["User Experience", "User Exchange", "Universal Experience", "User Examples"], "a": 0},
+    {"q": "Which is not a gestalt principle?", "options": ["Proximity", "Similarity", "Closure", "Isolation"], "a": 3},
+    {"q": "What is the purpose of wireframing?", "options": ["Adding final colors", "Planning the layout and structure", "Exporting code", "Creating a logo"], "a": 1},
+    {"q": "Which tool blends two colors smoothly?", "options": ["Paint bucket", "Gradient tool", "Brush tool", "Eraser"], "a": 1},
+    {"q": "What is a drop shadow used for?", "options": ["Hiding elements", "Creating a sense of depth", "Changing color", "Aligning text"], "a": 1},
+    {"q": "What is isometric design?", "options": ["2D design drawn in 3D perspective", "Flat design", "Animation", "Black and white design"], "a": 0},
+    {"q": "Which file format is widely used for animations?", "options": ["JPEG", "GIF", "PNG", "TIFF"], "a": 1},
+    {"q": "What is the primary function of layers in design software?", "options": ["To make the file smaller", "To organize and separate design elements", "To print faster", "To change the language"], "a": 1}
 ];
 
+// 50 unique questions for Video Editing
 const ve_base = [
     {"q": "What does FPS stand for?", "options": ["Frames Per Second", "First Person Shooter", "Fast Processing System", "Format Per Sequence"], "a": 0},
     {"q": "Which shortcut is universally used to split a clip in Premiere Pro?", "options": ["Ctrl + C", "C (Razor Tool)", "V (Selection Tool)", "M"], "a": 1},
@@ -22,9 +63,50 @@ const ve_base = [
     {"q": "Which software is industry standard for visual effects?", "options": ["Premiere Pro", "After Effects", "Lightroom", "Audition"], "a": 1},
     {"q": "What is the purpose of a proxy file?", "options": ["To increase rendering time", "To edit 4K/8K footage smoothly on lower-end systems", "To add subtitles", "To upload directly to YouTube"], "a": 1},
     {"q": "Which audio level is generally considered safe for dialogue?", "options": ["0 dB", "-12 dB to -6 dB", "+6 dB", "-30 dB"], "a": 1},
-    {"q": "What is a 'jump cut'?", "options": ["A smooth transition", "An abrupt cut between two sequential shots", "Cutting to a different scene", "A slow motion effect"], "a": 1}
+    {"q": "What is a 'jump cut'?", "options": ["A smooth transition", "An abrupt cut between two sequential shots", "Cutting to a different scene", "A slow motion effect"], "a": 1},
+    {"q": "What does 'L-cut' mean?", "options": ["Audio cuts before video", "Video cuts before audio", "A dissolve transition", "An effect shaped like an L"], "a": 1},
+    {"q": "What is a 'timeline' in video editing?", "options": ["A historical document", "The workspace where clips are sequenced", "A type of clock", "The rendering speed"], "a": 1},
+    {"q": "Which frame rate is commonly used for a cinematic look?", "options": ["60 fps", "24 fps", "30 fps", "120 fps"], "a": 1},
+    {"q": "What is a cross dissolve?", "options": ["A type of camera", "A transition fading one clip into another", "An audio effect", "A color correction tool"], "a": 1},
+    {"q": "What does rendering mean in video editing?", "options": ["Deleting clips", "Processing effects and compiling the final video", "Adding music", "Recording voiceover"], "a": 1},
+    {"q": "What is 'keyframing'?", "options": ["Locking a clip", "Setting parameters at specific points in time to animate changes", "Framing a shot", "Adding a green screen"], "a": 1},
+    {"q": "What is lower thirds?", "options": ["The bottom of the screen", "Text or graphics placed in the lower area of the screen", "A type of camera angle", "Audio track placement"], "a": 1},
+    {"q": "Which format is widely used for web video delivery?", "options": ["AVI", "MP4", "MOV", "ProRes"], "a": 1},
+    {"q": "What is chroma keying?", "options": ["Changing the tempo", "Removing a specific color (like a green screen)", "Adding subtitles", "Color grading"], "a": 1},
+    {"q": "What is 'foley'?", "options": ["A visual effect", "Creating and recording everyday sound effects", "A transition", "A rendering error"], "a": 1},
+    {"q": "What is the purpose of a storyboard?", "options": ["To read a story", "To visually plan out shots before filming/editing", "To write code", "To fix audio"], "a": 1},
+    {"q": "Which tool adjusts the speed of a clip?", "options": ["Razor tool", "Rate Stretch tool", "Pen tool", "Hand tool"], "a": 1},
+    {"q": "What is letterboxing?", "options": ["Sending a letter", "Black bars at the top and bottom of a video", "A text effect", "A square video format"], "a": 1},
+    {"q": "What does 'multicam editing' allow?", "options": ["Editing audio only", "Editing multiple camera angles simultaneously", "Adding text", "Rendering faster"], "a": 1},
+    {"q": "What is a sequence?", "options": ["A folder", "A series of clips arranged on the timeline", "A type of transition", "A single image"], "a": 1},
+    {"q": "Which audio effect removes background hum?", "options": ["Reverb", "DeNoise", "Pitch Shifter", "Delay"], "a": 1},
+    {"q": "What is 'montage'?", "options": ["A single long take", "A rapid succession of shots to condense time", "A title screen", "An audio track"], "a": 1},
+    {"q": "What does 'ripple delete' do?", "options": ["Deletes a clip and leaves a gap", "Deletes a clip and closes the gap automatically", "Deletes audio only", "Duplicates a clip"], "a": 1},
+    {"q": "What is an establishing shot?", "options": ["A close-up", "A wide shot that sets the scene's location", "A transition", "A jump cut"], "a": 1},
+    {"q": "Which resolution is 4K?", "options": ["1920x1080", "1280x720", "3840x2160", "720x480"], "a": 2},
+    {"q": "What is a LUT?", "options": ["Look Up Table (for color grading)", "Large Utility Tool", "Low Use Track", "Length Under Time"], "a": 0},
+    {"q": "What does slipping a clip do?", "options": ["Moves it to another track", "Changes its in and out points without moving it on the timeline", "Deletes it", "Changes its speed"], "a": 1},
+    {"q": "What is masking used for?", "options": ["Hiding or isolating specific parts of a video", "Adding music", "Exporting", "Changing sequence settings"], "a": 0},
+    {"q": "What is an assembly edit?", "options": ["The final version", "The first rough placement of clips in order", "Adding visual effects", "Color correction"], "a": 1},
+    {"q": "Which term refers to adjusting the colors to look natural?", "options": ["Color Grading", "Color Correction", "LUT", "Chroma Key"], "a": 1},
+    {"q": "What is 'pacing' in editing?", "options": ["Walking around", "The rhythm and speed of the cuts", "The volume level", "The file size"], "a": 1},
+    {"q": "What is a wipe transition?", "options": ["Cleaning the screen", "One shot replaces another by moving across the screen", "Fading to black", "A sudden cut"], "a": 1},
+    {"q": "What does title safe area mean?", "options": ["A safe place for files", "The area of the screen where text will not be cut off", "A backup save", "A font style"], "a": 1},
+    {"q": "What is 'room tone'?", "options": ["The color of the room", "The natural background silence of a room", "A sound effect", "A lighting setup"], "a": 1},
+    {"q": "What is dynamic link?", "options": ["A website link", "A feature allowing seamless integration between Adobe apps", "A fast render", "A type of cut"], "a": 1},
+    {"q": "What is time remapping?", "options": ["Changing the time zone", "Varying the speed of a clip smoothly over time", "A transition", "Syncing audio"], "a": 1},
+    {"q": "Which track type holds music and voiceover?", "options": ["Video track", "Audio track", "Adjustment layer", "Title track"], "a": 1},
+    {"q": "What is a 'match cut'?", "options": ["Cutting to a completely different scene", "A cut matching the action or composition of the previous shot", "A dissolve", "An error"], "a": 1},
+    {"q": "What is bitrate?", "options": ["The size of the video frame", "The amount of data processed per second", "The number of colors", "The audio pitch"], "a": 1},
+    {"q": "What is an animatic?", "options": ["A final video", "A storyboard set to time with temporary audio", "A type of animation", "A visual effect"], "a": 1},
+    {"q": "What does a multicam monitor show?", "options": ["Only the final output", "Multiple camera angles simultaneously", "Audio waves", "Color scopes"], "a": 1},
+    {"q": "What is 'offline editing'?", "options": ["Editing without internet", "Editing with low-res proxies before relinking to high-res", "Editing on a phone", "Deleting files"], "a": 1},
+    {"q": "What is a scratch disk?", "options": ["A damaged CD", "A storage drive used for temporary rendering files", "A sound effect", "A DJ tool"], "a": 1},
+    {"q": "What does 'snapping' do on the timeline?", "options": ["Breaks clips", "Magnetically aligns clips edge-to-edge", "Takes a screenshot", "Adds a transition"], "a": 1},
+    {"q": "What is a bumper?", "options": ["A car part", "A short video clip used to transition between segments", "A sound effect", "A color grade"], "a": 1}
 ];
 
+// 50 unique questions for Content Writing
 const cw_base = [
     {"q": "What is SEO?", "options": ["Social Engagement Optimization", "Search Engine Optimization", "Site Error Output", "Standard English Organization"], "a": 1},
     {"q": "What is a 'Call to Action' (CTA)?", "options": ["A complaint to the manager", "A prompt telling the user what to do next", "A headline", "A copyright claim"], "a": 1},
@@ -35,9 +117,50 @@ const cw_base = [
     {"q": "What is a 'hook' in content writing?", "options": ["The conclusion", "The first line designed to grab attention", "The meta tags", "The sponsor link"], "a": 1},
     {"q": "What is plagiarism?", "options": ["Using synonyms", "Citing sources properly", "Presenting someone else's work as your own", "Writing about common knowledge"], "a": 2},
     {"q": "What is the primary goal of copywriting?", "options": ["To entertain", "To persuade the reader to take an action (buy, click, etc.)", "To inform objectively", "To write a novel"], "a": 1},
-    {"q": "What is A/B testing in email marketing?", "options": ["Testing two completely different platforms", "Sending two variations of an email to see which performs better", "Checking for spelling errors", "A grading system"], "a": 1}
+    {"q": "What is A/B testing in email marketing?", "options": ["Testing two completely different platforms", "Sending two variations of an email to see which performs better", "Checking for spelling errors", "A grading system"], "a": 1},
+    {"q": "What is keyword stuffing?", "options": ["Adding keywords naturally", "Overloading a page with keywords to manipulate search ranking", "A cooking technique", "Researching keywords"], "a": 1},
+    {"q": "What is a buyer persona?", "options": ["A real customer", "A semi-fictional representation of an ideal customer", "A sales pitch", "A social media influencer"], "a": 1},
+    {"q": "What is the purpose of a meta description?", "options": ["To write a blog post", "To summarize the page content for search engines and users", "To hide keywords", "To add an image"], "a": 1},
+    {"q": "What is clickbait?", "options": ["A fishing technique", "A headline designed to attract clicks, often misleadingly", "A well-researched article", "A type of CTA"], "a": 1},
+    {"q": "What does B2B stand for?", "options": ["Business to Buyer", "Business to Business", "Blog to Business", "Back to Basics"], "a": 1},
+    {"q": "What is a 'lead magnet'?", "options": ["A magnet made of lead", "A free item or service given away to gather contact details", "A catchy headline", "A social media post"], "a": 1},
+    {"q": "What is proofreading?", "options": ["Reading quickly", "Reviewing text for spelling, grammar, and typos", "Writing a draft", "Publishing content"], "a": 1},
+    {"q": "What does CTR stand for?", "options": ["Click Through Rate", "Content To Read", "Call To React", "Catch The Reader"], "a": 0},
+    {"q": "What is a 'landing page'?", "options": ["A homepage", "A standalone web page created specifically for a marketing campaign", "A contact page", "An error page"], "a": 1},
+    {"q": "Which metric measures how many people left a website after viewing one page?", "options": ["Conversion rate", "Bounce rate", "Engagement rate", "Click rate"], "a": 1},
+    {"q": "What is guest blogging?", "options": ["Reading a blog", "Writing and publishing a post on someone else's blog", "Hosting a podcast", "Creating a new website"], "a": 1},
+    {"q": "What does a style guide provide?", "options": ["A list of topics", "Guidelines on tone, grammar, and brand voice", "A content calendar", "A list of competitors"], "a": 1},
+    {"q": "What is the inverted pyramid structure?", "options": ["A shape", "Starting with the most important info, followed by details", "Hiding the main point at the end", "A poetry style"], "a": 1},
+    {"q": "What is a white paper?", "options": ["A blank piece of paper", "An authoritative, in-depth report on a specific topic", "A short blog post", "A social media update"], "a": 1},
+    {"q": "What does 'ROI' stand for in marketing?", "options": ["Return on Investment", "Rate of Interaction", "Reach of Internet", "Return on Idea"], "a": 0},
+    {"q": "What is user-generated content (UGC)?", "options": ["Content written by AI", "Content created by customers or users of a brand", "Content copied from competitors", "Content written by employees"], "a": 1},
+    {"q": "What is a 'slush pile' in publishing?", "options": ["Melted snow", "The stack of unsolicited manuscripts", "A collection of bad ideas", "A type of file folder"], "a": 1},
+    {"q": "Which tool is commonly used to check for plagiarism?", "options": ["Photoshop", "Grammarly/Copyscape", "Excel", "Premiere Pro"], "a": 1},
+    {"q": "What is long-form content?", "options": ["A tweet", "Content that is typically over 1,000 words in length", "A short email", "A slogan"], "a": 1},
+    {"q": "What is the role of an editor?", "options": ["To write the first draft", "To refine, polish, and correct written content", "To design graphics", "To schedule social media posts"], "a": 1},
+    {"q": "What is a tagline?", "options": ["A price tag", "A short, memorable phrase used in marketing", "A blog post title", "A meta tag"], "a": 1},
+    {"q": "What is storytelling in marketing?", "options": ["Making up lies", "Using a narrative to connect with an audience", "Writing fiction books", "Reading to children"], "a": 1},
+    {"q": "What does KPI mean?", "options": ["Key Performance Indicator", "Keep People Interested", "Key Product Information", "Known Public Interest"], "a": 0},
+    {"q": "What is a newsletter?", "options": ["A letter to the news", "A regularly distributed email containing news and updates", "A daily newspaper", "A direct mail catalog"], "a": 1},
+    {"q": "What is alt text?", "options": ["Alternative text for an image to aid accessibility and SEO", "Text written by an AI", "A different font", "Text at the bottom of a page"], "a": 0},
+    {"q": "What is a 'swipe file'?", "options": ["A dating app folder", "A collection of tested and proven copywriting examples", "A trash bin", "A folder of rejected ideas"], "a": 1},
+    {"q": "What does B2C mean?", "options": ["Business to Customer", "Business to Consumer", "Blog to Consumer", "Back to Content"], "a": 1},
+    {"q": "What is a caption?", "options": ["A title", "Text accompanying a social media post or image", "A concluding sentence", "A book chapter"], "a": 1},
+    {"q": "What is gated content?", "options": ["Content behind a physical gate", "Content accessible only after providing contact information", "Content that is banned", "Content for children"], "a": 1},
+    {"q": "What is repurposing content?", "options": ["Deleting it", "Adapting existing content into a new format (e.g., blog to video)", "Copying it exactly", "Selling it to competitors"], "a": 1},
+    {"q": "What is a case study?", "options": ["Studying a briefcase", "An in-depth analysis of a real-world scenario or success story", "A fictional story", "A short review"], "a": 1},
+    {"q": "What does target audience mean?", "options": ["People you want to avoid", "The specific group of consumers most likely to want your product", "Everyone on the internet", "Other writers"], "a": 1},
+    {"q": "What is jargon?", "options": ["A type of jar", "Specialized terminology specific to a profession or industry", "Simple language", "A foreign language"], "a": 1},
+    {"q": "What is a headline analyzer used for?", "options": ["Reading news", "Scoring how catchy and effective a headline is", "Translating text", "Checking spelling"], "a": 1},
+    {"q": "What is localization in content?", "options": ["Writing about the local news", "Adapting content to meet the language and cultural needs of a specific region", "Using GPS", "Hiring local writers"], "a": 1},
+    {"q": "What is a content pillar?", "options": ["A building support", "A substantive piece of content that can be broken into many smaller pieces", "A popular blogger", "A type of font"], "a": 1},
+    {"q": "What does drafting mean?", "options": ["Drawing a picture", "Writing the preliminary version of a text", "Publishing", "Deleting"], "a": 1},
+    {"q": "What is readability?", "options": ["Being able to read", "How easy it is for a reader to understand a written text", "The size of a book", "A font type"], "a": 1},
+    {"q": "What is ghostwriting?", "options": ["Writing scary stories", "Writing text that is officially credited to another person", "Writing invisibly", "Using AI to write"], "a": 1},
+    {"q": "What is a testimonial?", "options": ["A court statement", "A written declaration from a customer praising a product or service", "A complaint", "A suggestion"], "a": 1}
 ];
 
+// 50 unique questions for Event Photography
 const ep_base = [
     {"q": "What does ISO control?", "options": ["Lens zoom", "The camera sensor's sensitivity to light", "The flash power", "The focus point"], "a": 1},
     {"q": "Which aperture lets in the most light?", "options": ["f/1.4", "f/4", "f/8", "f/22"], "a": 0},
@@ -48,34 +171,53 @@ const ep_base = [
     {"q": "Why shoot in RAW format instead of JPEG?", "options": ["Smaller file sizes", "Retains maximum data for post-processing", "Ready to upload immediately", "Looks better straight out of camera"], "a": 1},
     {"q": "What is a 'bounce flash'?", "options": ["A broken flash", "Aiming the flash at a ceiling/wall for softer light", "A flash that strobes repeatedly", "A flash attached to the floor"], "a": 1},
     {"q": "What does white balance adjust?", "options": ["Exposure", "Color temperature", "Contrast", "Sharpness"], "a": 1},
-    {"q": "In a low-light indoor event without flash, what should you do?", "options": ["Lower the ISO", "Increase the aperture (lower f-stop number) and raise ISO", "Increase shutter speed to 1/1000s", "Use a smaller aperture (f/16)"], "a": 1}
+    {"q": "In a low-light indoor event without flash, what should you do?", "options": ["Lower the ISO", "Increase the aperture (lower f-stop number) and raise ISO", "Increase shutter speed to 1/1000s", "Use a smaller aperture (f/16)"], "a": 1},
+    {"q": "What is depth of field?", "options": ["The size of a field", "The distance between the nearest and farthest objects in acceptably sharp focus", "The length of the lens", "The camera's sensor size"], "a": 1},
+    {"q": "What is the golden hour?", "options": ["A 60-minute long exposure", "The period shortly after sunrise and before sunset with soft light", "A camera setting", "A type of flash"], "a": 1},
+    {"q": "What is a diffuser used for?", "options": ["Making loud noises", "Scattering harsh light to make it softer", "Cleaning the lens", "Holding the camera steady"], "a": 1},
+    {"q": "What does a polarizing filter do?", "options": ["Changes the color to black and white", "Reduces glare and reflections", "Makes the image blurry", "Increases flash power"], "a": 1},
+    {"q": "What is continuous autofocus (AF-C or AI Servo) used for?", "options": ["Static subjects", "Tracking moving subjects", "Taking macros", "Manual focusing"], "a": 1},
+    {"q": "What is a histogram?", "options": ["A history book", "A graphical representation of the tonal values in an image", "A type of lens", "A memory card format"], "a": 1},
+    {"q": "What does overexposed mean?", "options": ["Too dark", "Too bright, losing detail in the highlights", "Too blurry", "Too colorful"], "a": 1},
+    {"q": "What is 'noise' in photography?", "options": ["Loud shutter sound", "Visual grain or speckles, usually from high ISO", "Background talking", "A flash pop"], "a": 1},
+    {"q": "What is the rule of thirds?", "options": ["Taking three photos at once", "A composition rule dividing the frame into a 3x3 grid", "Using three lenses", "Charging 1/3 of the price"], "a": 1},
+    {"q": "What is a telephoto lens best for?", "options": ["Wide landscapes", "Capturing subjects from far away", "Macro photography", "Selfies"], "a": 1},
+    {"q": "What is a wide-angle lens best used for at an event?", "options": ["Portraits", "Capturing the entire venue or large groups", "Extreme close-ups", "Sports action"], "a": 1},
+    {"q": "What is backlighting?", "options": ["A light on the camera back", "Light coming from behind the subject", "A broken flash", "Light from the ceiling"], "a": 1},
+    {"q": "What is a softbox?", "options": ["A padded camera bag", "A lighting modifier that creates soft, even light", "A software for editing", "A memory card case"], "a": 1},
+    {"q": "What does a speedlite do?", "options": ["Makes the camera shoot faster", "Acts as an external portable flash", "Speeds up memory transfer", "Focuses quickly"], "a": 1},
+    {"q": "What is a reflector used for?", "options": ["Reflecting light onto a subject to fill in shadows", "Protecting the lens", "Making the camera look professional", "Hiding the photographer"], "a": 0},
+    {"q": "What is framing in composition?", "options": ["Putting a picture in a frame", "Using elements within the scene to create a 'frame' around the subject", "Cropping in post", "Setting the aspect ratio"], "a": 1},
+    {"q": "What does underexposed mean?", "options": ["Too bright", "Too dark, losing detail in the shadows", "Too noisy", "Too sharp"], "a": 1},
+    {"q": "What is a hot shoe?", "options": ["An overheated camera", "The mounting point on a camera for an external flash", "A fast memory card", "A type of tripod"], "a": 1},
+    {"q": "What is burst mode?", "options": ["A broken camera", "Shooting multiple frames quickly by holding down the shutter button", "A flash mode", "A colorful edit"], "a": 1},
+    {"q": "What is chromatic aberration?", "options": ["A cool visual effect", "Color fringing, often purple/green, along high-contrast edges", "A type of lens", "A focusing error"], "a": 1},
+    {"q": "What is a monopod?", "options": ["A camera with one lens", "A single-staff support for a camera", "A type of drone", "A small tripod"], "a": 1},
+    {"q": "What does dynamic range refer to?", "options": ["How far the flash reaches", "The camera's ability to capture detail in both dark shadows and bright highlights", "How fast the lens focuses", "The zoom distance"], "a": 1},
+    {"q": "What is a macro lens used for?", "options": ["Taking pictures of stars", "Extreme close-up photography of small subjects", "Wide landscapes", "Sports"], "a": 1},
+    {"q": "What is panning?", "options": ["Cooking at an event", "Moving the camera to follow a moving subject, keeping them sharp while blurring the background", "Taking a wide shot", "Looking up and down"], "a": 1},
+    {"q": "What is front lighting?", "options": ["Light coming from behind the subject", "Light hitting the subject directly from the front", "Light from above", "Light from below"], "a": 1},
+    {"q": "What does a ND (Neutral Density) filter do?", "options": ["Makes colors neutral", "Reduces the amount of light entering the lens without affecting color", "Adds contrast", "Makes the image sharper"], "a": 1},
+    {"q": "What is the focal length measured in?", "options": ["Inches", "Millimeters (mm)", "Centimeters", "Pixels"], "a": 1},
+    {"q": "What is 'chimping'?", "options": ["A type of monkey", "Constantly looking at the camera's LCD screen after every shot", "A jumping photo", "A lighting technique"], "a": 1},
+    {"q": "What is a candid photo?", "options": ["A heavily posed photo", "An unposed, spontaneous photograph", "A photo of candy", "A group shot"], "a": 1},
+    {"q": "What is lead room?", "options": ["A room for leads", "Space left in front of a moving subject or where a subject is looking", "A darkroom", "The venue entrance"], "a": 1},
+    {"q": "What is vignette?", "options": ["A small vine", "Darkening of the corners of an image", "A bright center", "A type of filter"], "a": 1},
+    {"q": "What is a step-and-repeat?", "options": ["A dance move", "A banner with logos used as a backdrop for red carpet photos", "A camera mode", "A Photoshop tool"], "a": 1},
+    {"q": "What is meant by 'stopping down'?", "options": ["Stopping the shoot", "Using a smaller aperture (larger f-number)", "Lowering the tripod", "Decreasing ISO"], "a": 1},
+    {"q": "What is sync speed?", "options": ["How fast files transfer", "The fastest shutter speed a camera can use with a flash", "How fast the autofocus is", "The burst rate"], "a": 1},
+    {"q": "What is meant by 'shooting tethered'?", "options": ["Connecting the camera to a computer so photos appear on screen instantly", "Tying the camera to your wrist", "Shooting with two cameras", "Using a long lens"], "a": 0},
+    {"q": "What is the exposure triangle?", "options": ["A shape in composition", "The relationship between ISO, Aperture, and Shutter Speed", "A type of tripod", "A lighting setup with three lights"], "a": 1},
+    {"q": "What is a light meter used for?", "options": ["Measuring the distance", "Accurately measuring the amount of light for correct exposure", "Weighing the camera", "Checking battery life"], "a": 1},
+    {"q": "What is a gel in lighting?", "options": ["Hair product", "A colored transparent material placed over a light to change its color", "A lens cleaner", "A softbox type"], "a": 1},
+    {"q": "What is a full-frame sensor?", "options": ["A sensor that fills the whole camera", "A sensor matching the size of classic 35mm film", "A cropped sensor", "A video-only sensor"], "a": 1},
+    {"q": "What is back button focus?", "options": ["Focusing behind the subject", "Using a button on the back of the camera to focus instead of the shutter button", "A broken focus ring", "A menu setting"], "a": 1}
 ];
-
-// Helper to pad questions to exactly 50 per role
-function padQuestions(baseList, categoryName) {
-    let padded = [...baseList];
-    const templates = [
-        {"q": `Advanced ${categoryName} Scenario: How would you handle a tight deadline?`, "options": ["Panic", "Prioritize and execute", "Ignore it", "Resign"], "a": 1},
-        {"q": `Which skill is crucial for ${categoryName} professionals?`, "options": ["Typing speed", "Attention to detail", "Lifting heavy objects", "Singing"], "a": 1},
-        {"q": `What is the best way to stay updated in ${categoryName}?`, "options": ["Read outdated books", "Follow industry blogs and trends", "Do nothing", "Ask a wizard"], "a": 1},
-        {"q": `When delivering a ${categoryName} project, what is the final step?`, "options": ["Start over", "Quality assurance and review", "Delete the files", "Go to sleep"], "a": 1},
-        {"q": `How do you handle negative feedback on your ${categoryName} work?`, "options": ["Argue", "Analyze, learn, and improve", "Ignore the client", "Cry"], "a": 1}
-    ];
-    
-    let count = padded.length;
-    while (count < 50) {
-        let template = {...templates[count % templates.length]};
-        template.q = `Question ${count + 1}: ${template.q}`;
-        padded.push(template);
-        count++;
-    }
-    return padded;
-}
 
 // Export to global window object
 window.questionBank = {
-    "graphic_design": padQuestions(gd_base, "Graphic Design"),
-    "video_editing": padQuestions(ve_base, "Video Editing"),
-    "content_writing": padQuestions(cw_base, "Content Writing"),
-    "event_photography": padQuestions(ep_base, "Event Photography")
+    "graphic_design": gd_base,
+    "video_editing": ve_base,
+    "content_writing": cw_base,
+    "event_photography": ep_base
 };
