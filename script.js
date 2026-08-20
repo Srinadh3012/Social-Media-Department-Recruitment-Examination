@@ -407,12 +407,15 @@ function handleFullscreenChange() {
 
 function enterFullscreen() {
     const elem = document.documentElement;
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen().catch(err => console.log(err));
-    } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen();
+    const requestFs = elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen;
+    
+    if (requestFs) {
+        requestFs.call(elem).then(() => {
+            // Try to lock the ESC key so they cannot exit fullscreen
+            if (navigator.keyboard && navigator.keyboard.lock) {
+                navigator.keyboard.lock(['Escape']).catch(e => console.log("Keyboard lock failed:", e));
+            }
+        }).catch(err => console.log(err));
     }
 }
 
