@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixed Examination - Social Media Department</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using a standard sans-serif font like Inter/Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Role Selection Screen -->
+    <div id="landing-screen" class="screen active">
+        <div class="landing-card">
+            <h1>Social Media Department</h1>
+            <p>Recruitment Examination</p>
+            
+            <div class="student-details-form">
+                <div class="form-group">
+                    <label for="student-name">Full Name</label>
+                    <input type="text" id="student-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group row-group">
+                    <div class="form-group-half">
+                        <label for="student-roll">Roll No.</label>
+                        <input type="text" id="student-roll" placeholder="e.g. 101" required>
+                    </div>
+                    <div class="form-group-half">
+                        <label for="student-section">Section</label>
+                        <input type="text" id="student-section" placeholder="e.g. A" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="role-select">Select Role</label>
+                    <select id="role-select" required>
+                        <option value="" disabled selected>Choose a role...</option>
+                        <option value="graphic_design">Graphic Design</option>
+                        <option value="video_editing">Video Editing</option>
+                        <option value="content_writing">Content Writing</option>
+                        <option value="event_photography">Event Photography</option>
+                    </select>
+                </div>
+                <button id="start-exam-btn" class="primary-btn full-width mt-4">Start Exam</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exam Screen Layout -->
+    <div id="exam-screen" class="screen">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <div class="brand-badge">SMD EXAM</div>
+                <div class="exam-info">
+                    <h2 id="exam-title">Mixed Examination</h2>
+                    <p>50 Questions • Professional Level</p>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="status-indicator">
+                    <span class="dot green-dot"></span> Saved
+                </div>
+                <button class="nav-btn" id="fullscreen-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                    Fullscreen
+                </button>
+                <div class="timer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span id="time-display">60:00</span>
+                </div>
+                <button id="top-submit-btn" class="submit-test-btn">Submit Test</button>
+            </div>
+        </header>
+
+        <!-- Main Body -->
+        <div class="main-layout">
+            
+            <!-- Left Area: Question Display -->
+            <div class="question-area">
+                <div class="question-header">
+                    <h3 id="question-number-display">Question 1 of 50</h3>
+                    <div class="question-tags">
+                        <span class="tag" id="role-tag">General</span>
+                        <span class="tag text-blue">MCQ</span>
+                    </div>
+                </div>
+
+                <div class="question-content">
+                    <p id="question-text" class="question-text">Loading question...</p>
+                    <div class="options-container" id="options-container">
+                        <!-- Options injected here -->
+                    </div>
+                </div>
+
+                <div class="question-footer">
+                    <div class="footer-left">
+                        <button id="mark-review-btn" class="action-btn">
+                            <span class="dot purple-dot"></span> Mark for Review
+                        </button>
+                        <button id="clear-response-btn" class="action-btn">Clear Response</button>
+                    </div>
+                    <div class="footer-right">
+                        <button id="prev-btn" class="action-btn nav-action-btn">← Previous</button>
+                        <button id="save-next-btn" class="primary-btn">Save & Next →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Area: Palette -->
+            <div class="palette-area">
+                <div class="palette-header">
+                    <h3>Question Palette</h3>
+                </div>
+                
+                <div class="palette-legend">
+                    <div class="legend-item">
+                        <div class="legend-box answered">0</div>
+                        <span>Answered (<span id="count-answered">0</span>)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box not-answered">0</div>
+                        <span>Not Answered (<span id="count-not-answered">0</span>)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box marked">0</div>
+                        <span>Marked (<span id="count-marked">0</span>)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box not-visited">0</div>
+                        <span>Not Visited (<span id="count-not-visited">50</span>)</span>
+                    </div>
+                </div>
+
+                <div class="palette-grid-container">
+                    <div class="palette-grid" id="palette-grid">
+                        <!-- Grid buttons injected here -->
+                    </div>
+                </div>
+
+                <div class="palette-footer">
+                    <button id="bottom-submit-btn" class="submit-test-block-btn">Finish & Submit Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+        <div class="results-card">
+            <h2>Test Submitted Successfully</h2>
+            <div class="score-display">
+                Score: <span id="final-score">0</span> / 50
+            </div>
+            <p id="result-message"></p>
+            <div class="action-buttons mt-4" style="display: flex; gap: 1rem; justify-content: center;">
+                <button id="download-report-btn" class="secondary-btn">Download Report</button>
+                <button id="restart-btn" class="primary-btn">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
