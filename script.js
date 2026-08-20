@@ -334,27 +334,23 @@ async function submitTest() {
     const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxhNyCxtKe05ZqCavrAN4t2tC0aCjCaEPqrqzXZGkD5uQPjubWOgfoc1_Q3vYXw_faq/exec';
     
     // We send the data using text/plain to avoid complex CORS preflight issues with Google Scripts
-    try {
-        if (GOOGLE_SHEET_URL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE') {
-            await fetch(GOOGLE_SHEET_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8',
-                },
-                body: JSON.stringify({
-                    name: studentData.name,
-                    roll: studentData.roll,
-                    section: studentData.section,
-                    role: currentRoleName,
-                    score: score,
-                    percentage: percentage.toFixed(2)
-                })
-            });
-        } else {
-            console.warn("Google Sheet URL not set. Data not saved.");
-        }
-    } catch (err) {
-        console.error("Failed to save to Google Sheets:", err);
+    if (GOOGLE_SHEET_URL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE') {
+        fetch(GOOGLE_SHEET_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'text/plain;charset=utf-8',
+            },
+            body: JSON.stringify({
+                name: studentData.name,
+                roll: studentData.roll,
+                section: studentData.section,
+                role: currentRoleName,
+                score: score,
+                percentage: percentage.toFixed(2)
+            })
+        }).catch(err => console.error("Failed to save to Google Sheets:", err));
+    } else {
+        console.warn("Google Sheet URL not set. Data not saved.");
     }
 
     document.getElementById('final-score').textContent = score;
