@@ -323,6 +323,12 @@ async function submitTest() {
 
     const percentage = (score / questions.length) * 100;
     
+    // Disable submit buttons and show loading text
+    topSubmitBtn.textContent = "Submitting...";
+    bottomSubmitBtn.textContent = "Submitting...";
+    topSubmitBtn.disabled = true;
+    bottomSubmitBtn.disabled = true;
+    
     // Send data to Google Sheets
     // IMPORTANT: Replace the URL below with the Web App URL you get from Google Apps Script
     const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxhNyCxtKe05ZqCavrAN4t2tC0aCjCaEPqrqzXZGkD5uQPjubWOgfoc1_Q3vYXw_faq/exec';
