@@ -378,8 +378,17 @@ async function submitTest() {
     document.removeEventListener("MSFullscreenChange", handleFullscreenChange);
     
     // Exit fullscreen if possible
-    if (document.fullscreenElement) {
-        document.exitFullscreen().catch(err => console.log(err));
+    const doc = document;
+    if (doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement) {
+        if (doc.exitFullscreen) {
+            doc.exitFullscreen().catch(err => console.log(err));
+        } else if (doc.webkitExitFullscreen) {
+            doc.webkitExitFullscreen();
+        } else if (doc.mozCancelFullScreen) {
+            doc.mozCancelFullScreen();
+        } else if (doc.msExitFullscreen) {
+            doc.msExitFullscreen();
+        }
     }
     
     showScreen('results');
