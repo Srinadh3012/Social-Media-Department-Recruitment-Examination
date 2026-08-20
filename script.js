@@ -52,7 +52,8 @@ let studentData = {};
 
 // Anti-cheating variables
 let warningCount = 0;
-const MAX_WARNINGS = 1;
+const MAX_WARNINGS = 3;
+let isExamActive = false;
 
 // Initialization
 function init() {
@@ -94,19 +95,17 @@ function startExam(roleKey, roleName) {
     }
     
     // Attempt to go fullscreen for anti-cheating
-    const elem = document.documentElement;
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen().catch(err => console.log("Fullscreen request failed:", err));
-    } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
-    }
+    enterFullscreen();
     
-    // Enable anti-cheating tab switch detection
+    // Enable anti-cheating listeners
+    isExamActive = true;
     document.addEventListener("visibilitychange", handleVisibilityChange);
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+    document.addEventListener("mozfullscreenchange", handleFullscreenChange);
+    document.addEventListener("MSFullscreenChange", handleFullscreenChange);
 
-    currentRole = roleKey;
+    currentRoleKey = roleKey;
     currentRoleName = roleName;
     questions = window.questionBank[roleKey];
     
@@ -309,6 +308,7 @@ function updateTimeDisplay() {
 
 // Submit Test
 async function submitTest() {
+    isExamActive = false;
     clearInterval(timerInterval);
     evaluateCurrentQuestionStatus();
     updatePaletteUI();
@@ -364,8 +364,12 @@ async function submitTest() {
                      <strong>Roll No:</strong> ${studentData.roll} | <strong>Section:</strong> ${studentData.section} <br><br>
                      ${feedback}`;
     
-    // Remove anti-cheating listener
+    // Remove anti-cheating listeners
     document.removeEventListener("visibilitychange", handleVisibilityChange);
+    document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
+    document.removeEventListener("mozfullscreenchange", handleFullscreenChange);
+    document.removeEventListener("MSFullscreenChange", handleFullscreenChange);
     
     // Exit fullscreen if possible
     if (document.fullscreenElement) {
@@ -376,15 +380,39 @@ async function submitTest() {
 }
 
 // Anti-Cheating Logic
+function issueWarning(reason) {
+    if (!isExamActive) return;
+    
+    warningCount++;
+    if (warningCount > MAX_WARNINGS) {
+        alert("Anti-Cheating Violation: You have violated the rules too many times. Your exam will now be automatically submitted.");
+        submitTest();
+    } else {
+        alert(`WARNING (${warningCount}/${MAX_WARNINGS}): ${reason}. Doing this again may result in auto-submission.`);
+        enterFullscreen(); // Force back to fullscreen
+    }
+}
+
 function handleVisibilityChange() {
-    if (document.hidden) {
-        warningCount++;
-        if (warningCount > MAX_WARNINGS) {
-            alert("Anti-Cheating Violation: You have switched tabs too many times. Your exam will now be automatically submitted.");
-            submitTest();
-        } else {
-            alert(`WARNING (${warningCount}/${MAX_WARNINGS}): Please do not switch tabs or leave the exam window. Doing so again will automatically submit your exam.`);
-        }
+    if (document.hidden && isExamActive) {
+        issueWarning("Please do not switch tabs or leave the exam window");
+    }
+}
+
+function handleFullscreenChange() {
+    if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement && isExamActive) {
+        issueWarning("You exited fullscreen mode (ESC). You must remain in fullscreen during the exam");
+    }
+}
+
+function enterFullscreen() {
+    const elem = document.documentElement;
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen().catch(err => console.log(err));
+    } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
     }
 }
 
