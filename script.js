@@ -59,7 +59,7 @@ let isExamActive = false;
 
 // Initialization
 function init() {
-    startExamBtn.addEventListener('click', handleStartExam);
+    document.getElementById('student-form').addEventListener('submit', handleStartExam);
 
     saveNextBtn.addEventListener('click', handleSaveAndNext);
     prevBtn.addEventListener('click', handlePrevious);
@@ -73,7 +73,8 @@ function init() {
 }
 
 // Handle Form Submission
-function handleStartExam() {
+function handleStartExam(e) {
+    e.preventDefault();
     const name = studentNameInput.value.trim();
     const roll = studentRollInput.value.trim();
     const section = studentSectionInput.value.trim();
