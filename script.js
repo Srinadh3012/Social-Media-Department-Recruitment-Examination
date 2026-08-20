@@ -335,7 +335,7 @@ async function submitTest() {
     
     // Send data to Google Sheets
     // IMPORTANT: Replace the URL below with the Web App URL you get from Google Apps Script
-    const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxhNyCxtKe05ZqCavrAN4t2tC0aCjCaEPqrqzXZGkD5uQPjubWOgfoc1_Q3vYXw_faq/exec';
+    const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwK_ZQpjJQLcetdUUht5MKpwSBRbCjcYRHHZNhIDBLInIoGaocXC-jCjA4ZkCihIJMD/exec';
     
     // We send the data using text/plain to avoid complex CORS preflight issues with Google Scripts
     if (GOOGLE_SHEET_URL !== 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE') {
