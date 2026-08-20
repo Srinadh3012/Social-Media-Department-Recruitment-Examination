@@ -50,6 +50,10 @@ let timeLeft = 60 * 60; // 60 minutes in seconds
 
 let studentData = {};
 
+// Anti-cheating variables
+let warningCount = 0;
+const MAX_WARNINGS = 1;
+
 // Initialization
 function init() {
     startExamBtn.addEventListener('click', handleStartExam);
@@ -85,10 +89,23 @@ function handleStartExam() {
 // Start Exam
 function startExam(roleKey, roleName) {
     if (!window.questionBank || !window.questionBank[roleKey]) {
-        alert("Questions not found!");
+        alert("Questions for this role are not loaded yet.");
         return;
     }
     
+    // Attempt to go fullscreen for anti-cheating
+    const elem = document.documentElement;
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen().catch(err => console.log("Fullscreen request failed:", err));
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+    }
+    
+    // Enable anti-cheating tab switch detection
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
     currentRole = roleKey;
     currentRoleName = roleName;
     questions = window.questionBank[roleKey];
@@ -347,7 +364,28 @@ async function submitTest() {
                      <strong>Roll No:</strong> ${studentData.roll} | <strong>Section:</strong> ${studentData.section} <br><br>
                      ${feedback}`;
     
+    // Remove anti-cheating listener
+    document.removeEventListener("visibilitychange", handleVisibilityChange);
+    
+    // Exit fullscreen if possible
+    if (document.fullscreenElement) {
+        document.exitFullscreen().catch(err => console.log(err));
+    }
+    
     showScreen('results');
+}
+
+// Anti-Cheating Logic
+function handleVisibilityChange() {
+    if (document.hidden) {
+        warningCount++;
+        if (warningCount > MAX_WARNINGS) {
+            alert("Anti-Cheating Violation: You have switched tabs too many times. Your exam will now be automatically submitted.");
+            submitTest();
+        } else {
+            alert(`WARNING (${warningCount}/${MAX_WARNINGS}): Please do not switch tabs or leave the exam window. Doing so again will automatically submit your exam.`);
+        }
+    }
 }
 
 function resetExam() {
